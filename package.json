@@ -1,0 +1,42 @@
+{
+  "name": "postgres-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "run-p dev:*",
+    "dev:server": "netlify dev",
+    "dev:js": "dotenv npm run watch:js",
+    "db:start": "docker-compose up",
+    "db:stop": "docker-compose down",
+    "build": "dotenv npm run build:js",
+    "build:js": "babel functions --out-dir dist/functions",
+    "watch:js": "babel functions --watch --out-dir dist/functions",
+    "deploy": "netlify deploy"
+  },
+  "author": "De Voorhoede",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.0",
+    "@types/aws-lambda": "^8.10.46",
+    "@types/knex": "^0.16.1",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "dotenv": "^8.2.0",
+    "dotenv-cli": "^3.1.0",
+    "knex": "^0.20.13",
+    "middy": "^0.34.0",
+    "netlify-cli": "^2.40.0",
+    "npm-run-all": "^4.1.5",
+    "objection": "^2.1.3",
+    "pg": "^8.0.0"
+  },
+  "optionalDependencies": {
+    "sqlite3": "^4.1.1",
+    "mssql": "^6.2.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0"
+  }
+}

@@ -1,0 +1,23 @@
+{
+    "presets": [
+        ["@babel/preset-env",
+            {
+                "targets": {
+                    "node": true
+                }
+            }
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        ["transform-inline-environment-variables", {
+            "include" : [
+                "DB_NAME",
+                "DB_HOST",
+                "DB_USER",
+                "DB_PASSWORD",
+                "DB_SSL"
+            ]
+        }]
+    ]
+}
